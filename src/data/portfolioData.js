@@ -227,6 +227,36 @@ export const process = {
   ],
 }
 
+// Technical Skills structure
+export const technicalSkills = {
+  categories: [
+    {
+      title: "Programming Languages",
+      skills: [{ name: "Java" }, { name: "SQL" }, { name: "Python" }],
+    },
+    {
+      title: "Core Java",
+      skills: [{ name: "OOP" }, { name: "Exception Handling" }, { name: "Collections Framework" }],
+    },
+    {
+      title: "Backend Development",
+      skills: [{ name: "Spring Boot" }, { name: "Microservices" }, { name: "REST APIs" }, { name: "JDBC" }],
+    },
+    {
+      title: "Databases",
+      skills: [{ name: "MySQL" }, { name: "Relational Database Design" }, { name: "Database Normalization" }],
+    },
+    {
+      title: "Web Development",
+      skills: [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }, { name: "Tailwind CSS" }],
+    },
+    {
+      title: "Developer Tools",
+      skills: [{ name: "Git" }, { name: "GitHub" }, { name: "VS Code" }, { name: "Eclipse IDE" }, { name: "MySQL Workbench" }],
+    },
+  ],
+}
+
 // Skills section content
 export const skillCategories = [
   {
