@@ -284,6 +284,12 @@ export const about = {
   resumeUrl: "#", // replace with your actual CV link
 }
 
+export const aboutContent = {
+  heading: "About Me",
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Ediga Raghuveerendra</span>, a Java Full Stack Developer based in Bengaluru. I am a B.Tech Data Science graduate from RGMCET with hands-on experience building database-driven web applications using Java, JDBC, Servlets, and MySQL, while sharpening my skills through the placement training program at TAP Academy. I continuously strengthen my programming abilities through Data Structures and Algorithms practice and enjoy building scalable, robust software.`,
+  techStack: ["Java", "Spring Boot", "MySQL", "JavaScript", "React"],
+}
+
 // Navigation links (href matches section IDs)
 export const navLinks = [
   { label: "Home",     href: "#home"     },

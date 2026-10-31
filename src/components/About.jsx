@@ -1,126 +1,85 @@
-// About.jsx — two-column section: profile image left, bio + stats right
-import { about, academy } from "../data/portfolioData"
-import profileImg from "../assets/about/profile.png"
+// src/components/About.jsx — Red background section with Framer-Motion ID badge on a lanyard and torn-paper divider
+import { motion } from "framer-motion"
+import stackImage from "../assets/about/profile.png"
+import { aboutContent } from "../data/portfolioData"
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="relative bg-white text-black py-28 px-6 overflow-hidden"
-    >
-      {/* ── Decorative red corner accent ── */}
-      <div className="absolute top-0 right-0 w-72 h-72 bg-[#ff2a2a]/5 rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#ff2a2a]/5 rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+    <section id="about" className="bg-[#ff2a2a] pt-20 pb-40 px-6 md:px-12 relative overflow-hidden">
 
-      <div className="max-w-6xl mx-auto">
+      {/* ── Decorative 4-point star (Top-Right) ── */}
+      <svg
+        viewBox="0 0 24 24"
+        className="absolute top-10 right-10 w-8 h-8 md:w-12 md:h-12 fill-black opacity-30 animate-pulse pointer-events-none"
+      >
+        <path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" />
+      </svg>
 
-        {/* ── Section heading ── */}
-        <div className="text-center mb-16" data-aos="fade-up">
-          <p className="text-[#ff2a2a] text-sm font-bold tracking-widest uppercase mb-2">
-            Get To Know Me
-          </p>
-          <h2 className="text-4xl sm:text-5xl font-black text-black">
-            {about.heading}
+      {/* ── Decorative 4-point star (Bottom-Left) ── */}
+      <svg
+        viewBox="0 0 24 24"
+        style={{ animationDelay: "1s" }}
+        className="absolute bottom-36 left-8 w-10 h-10 md:w-14 md:h-14 fill-black opacity-30 animate-pulse pointer-events-none"
+      >
+        <path d="M12 0l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z" />
+      </svg>
+
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 items-start relative z-10">
+
+        {/* ── Left: ID Badge on a Lanyard (Framer Motion Spring Drop) ── */}
+        <div className="md:w-[350px] shrink-0 w-full flex justify-center md:justify-start pt-16">
+          <motion.div
+            initial={{ y: -300, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ type: "spring", stiffness: 110, damping: 9, mass: 1.1 }}
+            className="relative"
+          >
+            {/* Black lanyard string extending upwards */}
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-3 h-40 bg-black rounded-b-sm" />
+
+            {/* Grey clip rectangle */}
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-4 bg-gray-400 rounded-sm border border-gray-600 shadow-md z-20" />
+
+            {/* Dark ID Card */}
+            <div className="relative bg-gray-900 max-w-[280px] w-full rounded-2xl p-3 shadow-2xl shadow-black/80 -rotate-3 hover:rotate-0 transition-transform duration-500 z-10">
+              {/* Cutout slot at the top */}
+              <div className="w-12 h-2 bg-black/80 rounded-full mx-auto mb-3" />
+
+              {/* Photo inside */}
+              <img
+                src={stackImage}
+                alt="Ediga Raghuveerendra portrait"
+                className="w-full aspect-[3/4] rounded-xl object-cover object-top shadow-inner"
+              />
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ── Right: Content Block ── */}
+        <div data-aos="fade-left" className="flex-1 flex flex-col gap-6 pt-4">
+          <h2 className="text-4xl md:text-5xl font-black text-black tracking-tight">
+            {aboutContent.heading}
           </h2>
-          {/* Red underline accent */}
-          <div className="w-16 h-1 bg-[#ff2a2a] mx-auto mt-4 rounded-full" />
+          <p
+            className="text-lg font-bold leading-relaxed text-red-50"
+            dangerouslySetInnerHTML={{ __html: aboutContent.bio }}
+          />
         </div>
 
-        {/* ── Two-column grid ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-          {/* ── LEFT: Profile image ── */}
-          <div
-            className="flex justify-center"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            <div className="relative">
-              {/* Floating red square behind the image */}
-              <div className="absolute -top-4 -left-4 w-full h-full border-4 border-[#ff2a2a] rounded-2xl" />
-
-              {/* Profile picture */}
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={profileImg}
-                  alt="Profile photo of Ediga Raghuveerendra"
-                  className="w-full h-full object-cover animate-[float_6s_ease-in-out_infinite]"
-                  onError={(e) => {
-                    // Fallback if image is missing — show initials
-                    e.target.style.display = "none"
-                    e.target.parentElement.classList.add(
-                      "bg-black", "flex", "items-center", "justify-center"
-                    )
-                    e.target.parentElement.innerHTML =
-                      `<span class="text-7xl font-black text-white">ER</span>`
-                  }}
-                />
-              </div>
-
-              {/* Badge: trained at TAP Academy */}
-              <div className="absolute -bottom-5 -right-5 bg-[#ff2a2a] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg whitespace-nowrap">
-                🎓 Trained at {academy.name}
-              </div>
-            </div>
-          </div>
-
-          {/* ── RIGHT: Bio + stats + tags ── */}
-          <div
-            className="flex flex-col gap-6"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            <p className="text-[#ff2a2a] font-semibold text-lg italic">
-              {about.tagline}
-            </p>
-
-            {/* Bio paragraphs */}
-            <div className="flex flex-col gap-4">
-              {about.bio.map((para, i) => (
-                <p key={i} className="text-gray-600 leading-relaxed">
-                  {para}
-                </p>
-              ))}
-            </div>
-
-            {/* ── Stats row ── */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-t border-b border-gray-200">
-              {about.stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl font-black text-[#ff2a2a]">{stat.value}</p>
-                  <p className="text-xs text-gray-500 mt-1 font-medium">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-
-            {/* ── Tech tags ── */}
-            <div className="flex flex-wrap gap-2">
-              {about.techTags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-3 py-1 text-xs font-semibold rounded-full border border-gray-300 text-gray-700 hover:border-[#ff2a2a] hover:text-[#ff2a2a] transition-colors duration-200 cursor-default"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            {/* ── Download CV button ── */}
-            <div>
-              <a
-                href={about.resumeUrl}
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-black text-white font-bold text-sm hover:bg-[#ff2a2a] transition-all duration-300 shadow-md hover:scale-105 hover:shadow-[#ff2a2a]/30 hover:shadow-lg"
-              >
-                {/* Download icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M12 12v6m0 0l-3-3m3 3l3-3M12 3v9" />
-                </svg>
-                Download CV
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
+
+      {/* ── White Torn-Paper SVG Divider Along Bottom ── */}
+      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-16 sm:h-24 md:h-28 fill-white"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z" />
+        </svg>
+      </div>
+
     </section>
   )
 }
