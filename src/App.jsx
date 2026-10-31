@@ -1,4 +1,4 @@
-// App.jsx — root component; sections are composed here in order
+// App.jsx — root component; all sections composed in order
 import Navbar    from "./components/Navbar"
 import Hero      from "./components/Hero"
 import About     from "./components/About"
@@ -6,6 +6,7 @@ import Skills    from "./components/Skills"
 import Process   from "./components/Process"
 import Projects  from "./components/Projects"
 import Contact   from "./components/Contact"
+import Footer    from "./components/Footer"
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Process />
       <Projects />
       <Contact />
-      {/* Footer will be added next */}
+      <Footer />
     </>
   )
 }
