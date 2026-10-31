@@ -27,6 +27,26 @@ export const hero = {
   },
 }
 
+// About section content
+export const about = {
+  heading:  "About Me",
+  tagline:  "Passionate developer. Lifelong learner.",
+  bio: [
+    "I'm Ediga Raghuveerendra, a full-stack developer trained at TAP Academy in Hyderabad. I specialise in building clean, performant web applications using React on the front-end and Node.js on the back-end.",
+    "My training covered full-stack web development, artificial intelligence and augmented reality — giving me a unique blend of skills that bridges creative design and cutting-edge technology.",
+    "When I'm not coding, I'm exploring new frameworks, contributing to open-source, and levelling up my AR skills.",
+  ],
+  stats: [
+    { value: "10+",  label: "Projects Built"    },
+    { value: "5+",   label: "Technologies"      },
+    { value: "1+",   label: "Years Learning"    },
+    { value: "100%", label: "Passion"           },
+  ],
+  // Highlighted tech tags shown under the bio
+  techTags: ["React", "JavaScript", "Node.js", "Tailwind CSS", "MongoDB", "Git", "Augmented Reality", "AI/ML"],
+  resumeUrl: "#", // replace with your actual CV link
+}
+
 // Navigation links (href matches section IDs)
 export const navLinks = [
   { label: "Home",     href: "#home"     },
