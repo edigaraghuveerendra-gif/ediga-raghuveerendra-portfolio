@@ -27,6 +27,85 @@ export const hero = {
   },
 }
 
+// Projects section
+export const projects = [
+  {
+    id: 1,
+    title: "E-Commerce Platform",
+    description:
+      "Full-stack shopping app with product listings, cart, authentication and payment integration. Built with React, Node.js and MongoDB.",
+    image: null, // replace with: import img from '../assets/projects/ecommerce.png'
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+    category: "Full-Stack",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: true,
+  },
+  {
+    id: 2,
+    title: "Developer Portfolio",
+    description:
+      "This very portfolio — a React 19 + Vite + Tailwind CSS 4 SPA with Framer Motion animations, AOS scroll effects and EmailJS contact form.",
+    image: null,
+    tags: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+    category: "Frontend",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "Task Manager App",
+    description:
+      "A Kanban-style task manager with drag-and-drop boards, deadlines and user authentication. Data persisted in MongoDB.",
+    image: null,
+    tags: ["React", "Node.js", "MongoDB", "REST API"],
+    category: "Full-Stack",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: false,
+  },
+  {
+    id: 4,
+    title: "Weather Dashboard",
+    description:
+      "Real-time weather app consuming the OpenWeatherMap API. Shows 5-day forecast, humidity, wind speed with animated icons.",
+    image: null,
+    tags: ["React", "REST API", "CSS3"],
+    category: "Frontend",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: false,
+  },
+  {
+    id: 5,
+    title: "AR Product Viewer",
+    description:
+      "Augmented-reality web experience that lets users place 3D product models in their real environment using WebXR and Three.js.",
+    image: null,
+    tags: ["Three.js", "WebXR", "JavaScript", "AR"],
+    category: "AR / AI",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: true,
+  },
+  {
+    id: 6,
+    title: "Blog REST API",
+    description:
+      "RESTful API for a blogging platform: JWT auth, CRUD for posts and comments, image uploads via Cloudinary, rate limiting.",
+    image: null,
+    tags: ["Node.js", "Express", "MongoDB", "JWT"],
+    category: "Backend",
+    github: "https://github.com/edigaraghuveerendra",
+    live: "#",
+    featured: false,
+  },
+]
+
+// Project filter tabs (order matters)
+export const projectFilters = ["All", "Frontend", "Full-Stack", "Backend", "AR / AI"]
+
 // Process section — how I work
 export const process = {
   heading:    "My Process",
