@@ -290,6 +290,55 @@ export const aboutContent = {
   techStack: ["Java", "Spring Boot", "MySQL", "JavaScript", "React"],
 }
 
+// Activities / Leadership
+export const leadershipList = [
+  {
+    title: "LeetCode & Competitive Programming",
+    description: "Regularly practice Data Structures and Algorithms on LeetCode to strengthen problem-solving and algorithmic thinking.",
+    role: "Problem Solver",
+    badge: "DSA",
+  },
+  {
+    title: "Coding Contests & Hackathons",
+    description: "Participate in programming challenges on LeetCode and GeeksforGeeks, solving algorithmic problems under time constraints.",
+    role: "Contestant",
+    badge: "Competitive",
+  },
+  {
+    title: "AI-Assisted Development Workflow",
+    description: "Explore modern AI-assisted engineering tools and developer agents to improve productivity and code quality.",
+    role: "Developer",
+    badge: "Innovation",
+  },
+]
+
+// Internships (empty if none provided)
+export const internshipsList = []
+
+// Soft Skills
+export const softSkillsList = [
+  {
+    name: "Problem Solving",
+    icon: "🧩",
+    desc: "Strong aptitude for breaking down complex challenges into structured, maintainable code.",
+  },
+  {
+    name: "Analytical Thinking",
+    icon: "📈",
+    desc: "Rigorous focus on data models, normalization, logic flow, and algorithm efficiency.",
+  },
+  {
+    name: "Adaptability",
+    icon: "🔄",
+    desc: "Fast learner eager to adopt new technologies, backend frameworks, and engineering standards.",
+  },
+  {
+    name: "Creativity",
+    icon: "💡",
+    desc: "Approaching system architecture and UI/UX with fresh perspectives and clean aesthetics.",
+  },
+]
+
 // Navigation links (href matches section IDs)
 export const navLinks = [
   { label: "Home",     href: "#home"     },

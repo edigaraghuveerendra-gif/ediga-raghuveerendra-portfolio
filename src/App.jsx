@@ -1,12 +1,15 @@
-// App.jsx — root component; all sections composed in order
+// App.jsx — root component; sections composed in specified sequential order
 import Navbar          from "./components/Navbar"
 import Hero            from "./components/Hero"
 import About           from "./components/About"
 import TechnicalSkills from "./components/TechnicalSkills"
-import Process         from "./components/Process"
 import Projects        from "./components/Projects"
+import Internships     from "./components/Internships"
+import Leadership      from "./components/Leadership"
+import SoftSkills      from "./components/SoftSkills"
 import Contact         from "./components/Contact"
 import Footer          from "./components/Footer"
+import { internshipsList, leadershipList } from "./data/portfolioData"
 
 function App() {
   return (
@@ -15,8 +18,10 @@ function App() {
       <Hero />
       <About />
       <TechnicalSkills />
-      <Process />
       <Projects />
+      {internshipsList && internshipsList.length > 0 && <Internships />}
+      {leadershipList && leadershipList.length > 0 && <Leadership />}
+      <SoftSkills />
       <Contact />
       <Footer />
     </>
