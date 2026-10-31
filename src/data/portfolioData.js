@@ -27,6 +27,43 @@ export const hero = {
   },
 }
 
+// Skills section content
+export const skillCategories = [
+  {
+    category: "Frontend",
+    icon: "🖥️",
+    skills: [
+      { name: "React",       level: 85, color: "#61DAFB" },
+      { name: "JavaScript",  level: 90, color: "#F7DF1E" },
+      { name: "HTML5",       level: 95, color: "#E34F26" },
+      { name: "CSS3",        level: 88, color: "#1572B6" },
+      { name: "Tailwind CSS",level: 82, color: "#06B6D4" },
+    ],
+  },
+  {
+    category: "Backend",
+    icon: "⚙️",
+    skills: [
+      { name: "Node.js",     level: 78, color: "#339933" },
+      { name: "Express.js",  level: 75, color: "#ffffff" },
+      { name: "MongoDB",     level: 72, color: "#47A248" },
+      { name: "REST APIs",   level: 80, color: "#ff2a2a" },
+      { name: "SQL",         level: 65, color: "#4479A1" },
+    ],
+  },
+  {
+    category: "Tools & Others",
+    icon: "🛠️",
+    skills: [
+      { name: "Git & GitHub",level: 85, color: "#F05032" },
+      { name: "Vite",        level: 80, color: "#646CFF" },
+      { name: "Figma",       level: 70, color: "#F24E1E" },
+      { name: "AI / ML",     level: 60, color: "#ff2a2a" },
+      { name: "Augmented Reality", level: 65, color: "#00C4CC" },
+    ],
+  },
+]
+
 // About section content
 export const about = {
   heading:  "About Me",
