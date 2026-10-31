@@ -1,11 +1,13 @@
 // App.jsx — root component; sections are composed here in order
 import Navbar from "./components/Navbar"
+import Hero   from "./components/Hero"
 
 function App() {
   return (
     <>
       <Navbar />
-      {/* Sections will be added here one by one */}
+      <Hero />
+      {/* More sections will be added here one by one */}
     </>
   )
 }
