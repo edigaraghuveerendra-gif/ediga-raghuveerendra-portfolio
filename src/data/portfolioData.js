@@ -60,6 +60,18 @@ export const hero = {
   },
 }
 
+export const heroContent = {
+  greeting: "Hi, I'm Ediga Raghuveerendra",
+  titleHighlight: "Java Full Stack Developer",
+  subtitle: "Software Engineer experienced in building robust, database-driven web applications with Java, Spring Boot, and modern frontends.",
+  ctaPrimary: { text: "View My Work", href: "#projects" },
+  ctaSecondary: {
+    text: "Contact Me",
+    href: "mailto:edigaraghuveerendra@gmail.com?subject=Hiring Inquiry – Portfolio&body=Hello,%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ABest Regards,",
+  },
+  ctaResume: { text: "Download Resume", href: "/Ediga_Raghuveerendra.pdf" },
+}
+
 // Contact section
 export const contact = {
   heading:    "Get In Touch",
