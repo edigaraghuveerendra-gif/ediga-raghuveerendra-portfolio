@@ -290,6 +290,36 @@ export const aboutContent = {
   techStack: ["Java", "Spring Boot", "MySQL", "JavaScript", "React"],
 }
 
+// Process & Workflow Content
+export const skillsContent = {
+  badge: "My Process",
+  heading: "Here's how I turn ideas into real-world products",
+  description: "A structured engineering approach from database architecture to production deployment.",
+  cards: [
+    {
+      number: "01",
+      title: "Research",
+      text: "Understanding system requirements, user expectations, and outlining database schema constraints.",
+    },
+    {
+      number: "02",
+      title: "Design",
+      text: "Designing relational database tables, REST API contracts, and user-centric component flows.",
+    },
+    {
+      number: "03",
+      title: "Develop",
+      text: "Writing modular, object-oriented Java code with clean architecture, JDBC, and seamless API integrations.",
+    },
+    {
+      number: "04",
+      title: "Deploy",
+      text: "Testing endpoints, validating CRUD operations, and deploying reliable web solutions.",
+    },
+  ],
+  endText: "Ready to ship!",
+}
+
 // Activities / Leadership
 export const leadershipList = [
   {
