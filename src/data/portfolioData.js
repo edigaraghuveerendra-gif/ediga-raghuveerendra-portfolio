@@ -27,6 +27,49 @@ export const hero = {
   },
 }
 
+// Process section — how I work
+export const process = {
+  heading:    "My Process",
+  subheading: "How I turn ideas into real products",
+  steps: [
+    {
+      number: "01",
+      icon:   "🔍",
+      title:  "Discover",
+      description:
+        "I start by listening. Understanding the goal, the users, and the constraints before writing a single line of code. Great software starts with great questions.",
+    },
+    {
+      number: "02",
+      icon:   "🎨",
+      title:  "Design",
+      description:
+        "I sketch wireframes and plan the component architecture. Tailwind utility classes keep the design consistent and the code clean from day one.",
+    },
+    {
+      number: "03",
+      icon:   "💻",
+      title:  "Develop",
+      description:
+        "I build feature by feature — React components, API integrations, animations — with clean, commented, beginner-friendly code and regular Git commits.",
+    },
+    {
+      number: "04",
+      icon:   "🧪",
+      title:  "Test",
+      description:
+        "I test across browsers and screen sizes, fix lint warnings, and review performance. Quality is non-negotiable before shipping.",
+    },
+    {
+      number: "05",
+      icon:   "🚀",
+      title:  "Deploy",
+      description:
+        "I push to production with a CI/CD pipeline, add the final polish, and hand off clean documentation so the project is easy to maintain and grow.",
+    },
+  ],
+}
+
 // Skills section content
 export const skillCategories = [
   {
