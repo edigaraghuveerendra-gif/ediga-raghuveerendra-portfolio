@@ -1,146 +1,124 @@
-// Navbar.jsx — sticky top navigation with mobile hamburger menu
+// src/components/Navbar.jsx — fixed navigation header with desktop links & mobile animated dropdown
 import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { navLinks, personal } from "../data/portfolioData"
+import { personalInfo } from "../data/portfolioData"
 
 export default function Navbar() {
-  // Track whether the user has scrolled down (to add background blur)
-  const [scrolled, setScrolled] = useState(false)
-  // Track whether the mobile menu is open
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  // Listen to scroll position
+  // Scroll listener to update isScrolled when window.scrollY > 50
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Close mobile menu when a link is clicked
-  const handleNavClick = () => setMenuOpen(false)
+  const navLinks = ["Home", "About", "Skills", "Projects", "Contact"]
+
+  const hireMeMailto = `mailto:${personalInfo.emails.primary}?subject=Hiring Inquiry – Portfolio&body=Hello ${personalInfo.name},%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/90 backdrop-blur-md shadow-lg shadow-black/40"
-          : "bg-transparent"
+    <nav
+      className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
+        isOpen
+          ? "bg-[#ff2a2a] py-4"
+          : `bg-transparent ${isScrolled ? "py-4 backdrop-blur-md" : "py-6"}`
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-
-        {/* ── Logo / Name ── */}
-        <a
-          href="#home"
-          className="text-xl font-bold tracking-tight text-white hover:text-[#ff2a2a] transition-colors duration-200"
-        >
-          {/* First letter styled in accent red */}
-          <span className="text-[#ff2a2a]">
-            {personal.name.charAt(0)}
-          </span>
-          {personal.name.slice(1)}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Left: Brand logo */}
+        <a href="#" className="text-white text-2xl font-black tracking-tight">
+          {personalInfo.brandName}
+          <span className="text-[#ff2a2a] group-hover:text-white transition-colors">.</span>
         </a>
 
-        {/* ── Desktop links ── */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Centre: Desktop Links */}
+        <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
-            <li key={link.href}>
-              <a
-                href={link.href}
-                className="relative text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 group"
-              >
-                {link.label}
-                {/* Animated underline on hover */}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#ff2a2a] group-hover:w-full transition-all duration-300" />
-              </a>
-            </li>
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              className="relative group text-white/80 hover:text-white font-medium transition-colors"
+            >
+              {link}
+              {/* Animated underline */}
+              <span className="absolute -bottom-1 left-0 h-0.5 bg-red-500 w-0 group-hover:w-full transition-all duration-300" />
+            </a>
+          ))}
+        </div>
+
+        {/* Right: Hire Me pill button */}
+        <div className="hidden md:block">
+          <a
+            href={hireMeMailto}
+            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-300 inline-block"
+          >
+            Hire Me
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Button */}
+        <button
+          type="button"
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="md:hidden text-white focus:outline-none p-2 cursor-pointer"
+          aria-label="Toggle navigation menu"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+          >
+            {isOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile Dropdown Panel */}
+      <div
+        className={`absolute top-full left-0 w-full bg-[#ff2a2a] shadow-2xl overflow-hidden transition-all duration-300 md:hidden ${
+          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="px-6 py-6 flex flex-col space-y-4">
+          {navLinks.map((link) => (
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              onClick={() => setIsOpen(false)}
+              className="text-white font-bold text-lg border-b border-white/20 pb-2 hover:text-black transition-colors"
+            >
+              {link}
+            </a>
           ))}
 
-          {/* CTA button */}
-          <li>
-            <a
-              href="#contact"
-              className="px-5 py-2 rounded-full border border-[#ff2a2a] text-[#ff2a2a] text-sm font-semibold hover:bg-[#ff2a2a] hover:text-white transition-all duration-300"
-            >
-              Hire Me
-            </a>
-          </li>
-        </ul>
-
-        {/* ── Mobile hamburger button ── */}
-        <button
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden flex flex-col justify-center items-center gap-1.5 w-8 h-8 focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          {/* Three bars that animate into an X */}
-          <motion.span
-            animate={menuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="block w-6 h-0.5 bg-white origin-center"
-          />
-          <motion.span
-            animate={menuOpen ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.2 }}
-            className="block w-6 h-0.5 bg-white"
-          />
-          <motion.span
-            animate={menuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="block w-6 h-0.5 bg-white origin-center"
-          />
-        </button>
-      </nav>
-
-      {/* ── Mobile dropdown menu ── */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            key="mobile-menu"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="md:hidden bg-black/95 backdrop-blur-md overflow-hidden"
+          {/* Full-width white Hire Me button with red text */}
+          <a
+            href={hireMeMailto}
+            onClick={() => setIsOpen(false)}
+            className="w-full text-center py-3 rounded-full bg-white text-[#ff2a2a] font-bold text-base shadow-md hover:bg-gray-100 transition-colors inline-block"
           >
-            <ul className="flex flex-col items-center gap-6 py-8">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                >
-                  <a
-                    href={link.href}
-                    onClick={handleNavClick}
-                    className="text-lg font-medium text-gray-200 hover:text-[#ff2a2a] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </motion.li>
-              ))}
-              {/* Mobile CTA */}
-              <motion.li
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.07 }}
-              >
-                <a
-                  href="#contact"
-                  onClick={handleNavClick}
-                  className="px-6 py-2.5 rounded-full border border-[#ff2a2a] text-[#ff2a2a] font-semibold hover:bg-[#ff2a2a] hover:text-white transition-all duration-300"
-                >
-                  Hire Me
-                </a>
-              </motion.li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+            Hire Me
+          </a>
+        </div>
+      </div>
+    </nav>
   )
 }

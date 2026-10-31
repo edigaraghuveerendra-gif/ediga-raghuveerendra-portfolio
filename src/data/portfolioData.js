@@ -9,10 +9,25 @@ export const academy = {
 // Personal info
 export const personal = {
   name: "Ediga Raghuveerendra",
-  title: "Full-Stack Developer",
+  title: "Java Full Stack Developer",
   email: "edigaraghuveerendra@gmail.com",
-  github: "https://github.com/edigaraghuveerendra",
-  linkedin: "https://linkedin.com/in/edigaraghuveerendra",
+  github: "https://github.com/edigaraghuveerendra-gif",
+  linkedin: "https://www.linkedin.com/in/ediga-raghuveerendra/",
+}
+
+export const personalInfo = {
+  name: "Ediga Raghuveerendra",
+  firstName: "Ediga Raghuveerendra",
+  brandName: "Ediga Raghuveerendra",
+  title: "Java Full Stack Developer",
+  location: "Bengaluru, India",
+  phone: "6305595501",
+  emails: {
+    primary: "edigaraghuveerendra@gmail.com",
+    secondary: "",
+  },
+  summary: "Software Engineer with a strong foundation in Java, Object-Oriented Programming, SQL, and backend development, experienced in building database-driven web applications and implementing backend functionalities.",
+  resumeUrl: "/Ediga_Raghuveerendra.pdf",
 }
 
 // Hero section content
