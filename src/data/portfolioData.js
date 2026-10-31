@@ -30,6 +30,24 @@ export const personalInfo = {
   resumeUrl: "/Ediga_Raghuveerendra.pdf",
 }
 
+// Social links
+export const socialLinks = {
+  github: "https://github.com/edigaraghuveerendra-gif",
+  linkedin: "https://www.linkedin.com/in/ediga-raghuveerendra/",
+  instagram: "https://instagram.com",
+}
+
+// Footer content
+export const footerContent = {
+  taglines: [
+    "Java Full Stack Developer",
+    "Java · Spring Boot · React · MySQL",
+    "Building robust database-driven applications",
+  ],
+  credential: "B.Tech in Data Science — RGMCET",
+  copyright: `© ${new Date().getFullYear()} Ediga Raghuveerendra | Built with React`,
+}
+
 // Hero section content
 export const hero = {
   greeting:    "Hello, I'm",
