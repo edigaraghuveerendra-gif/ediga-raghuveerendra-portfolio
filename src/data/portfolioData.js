@@ -27,6 +27,39 @@ export const hero = {
   },
 }
 
+// Contact section
+export const contact = {
+  heading:    "Get In Touch",
+  subheading: "Have a project in mind? Let's talk.",
+  description:
+    "I'm currently open to freelance work and full-time opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open!",
+  email:    "edigaraghuveerendra@gmail.com",
+  location: "Hyderabad, India",
+  socials: [
+    {
+      label: "GitHub",
+      url:   "https://github.com/edigaraghuveerendra",
+      icon:  "github",
+    },
+    {
+      label: "LinkedIn",
+      url:   "https://linkedin.com/in/edigaraghuveerendra",
+      icon:  "linkedin",
+    },
+    {
+      label: "Email",
+      url:   "mailto:edigaraghuveerendra@gmail.com",
+      icon:  "email",
+    },
+  ],
+  // ⚠️ Replace these three values with your own from https://emailjs.com
+  emailjs: {
+    serviceId:  "YOUR_SERVICE_ID",
+    templateId: "YOUR_TEMPLATE_ID",
+    publicKey:  "YOUR_PUBLIC_KEY",
+  },
+}
+
 // Projects section
 export const projects = [
   {

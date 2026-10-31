@@ -5,6 +5,7 @@ import About     from "./components/About"
 import Skills    from "./components/Skills"
 import Process   from "./components/Process"
 import Projects  from "./components/Projects"
+import Contact   from "./components/Contact"
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Skills />
       <Process />
       <Projects />
-      {/* More sections will be added here one by one */}
+      <Contact />
+      {/* Footer will be added next */}
     </>
   )
 }
