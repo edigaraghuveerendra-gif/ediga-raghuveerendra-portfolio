@@ -1,6 +1,13 @@
-// App.jsx — root component, sections will be composed here
+// App.jsx — root component; sections are composed here in order
+import Navbar from "./components/Navbar"
+
 function App() {
-  return <></>
+  return (
+    <>
+      <Navbar />
+      {/* Sections will be added here one by one */}
+    </>
+  )
 }
 
 export default App
