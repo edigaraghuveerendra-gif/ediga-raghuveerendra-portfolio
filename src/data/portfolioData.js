@@ -37,6 +37,13 @@ export const socialLinks = {
   instagram: "https://instagram.com",
 }
 
+// EmailJS credentials
+export const emailjsConfig = {
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_7tmegf2",
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_baajbee",
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "HsmCvNnbbRdao30rX",
+}
+
 // Footer content
 export const footerContent = {
   taglines: [
