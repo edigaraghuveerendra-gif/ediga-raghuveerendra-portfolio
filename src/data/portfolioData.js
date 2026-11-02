@@ -37,11 +37,11 @@ export const socialLinks = {
   instagram: "https://instagram.com",
 }
 
-// EmailJS credentials
+// EmailJS credentials (values loaded from git-ignored .env.local)
 export const emailjsConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_7tmegf2",
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_baajbee",
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "HsmCvNnbbRdao30rX",
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "YOUR_EMAILJS_SERVICE_ID",
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "YOUR_EMAILJS_TEMPLATE_ID",
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "YOUR_EMAILJS_PUBLIC_KEY",
 }
 
 // Footer content
@@ -104,12 +104,7 @@ export const contact = {
       icon:  "email",
     },
   ],
-  // ⚠️ Replace these three values with your own from https://emailjs.com
-  emailjs: {
-    serviceId:  "YOUR_SERVICE_ID",
-    templateId: "YOUR_TEMPLATE_ID",
-    publicKey:  "YOUR_PUBLIC_KEY",
-  },
+  emailjs: emailjsConfig,
 }
 
 // Projects section

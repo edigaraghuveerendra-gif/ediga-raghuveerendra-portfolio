@@ -1,6 +1,6 @@
 // src/components/Navbar.jsx — fixed navigation header with desktop links & mobile animated dropdown
 import { useState, useEffect } from "react"
-import { personalInfo } from "../data/portfolioData"
+import { personalInfo, navLinks } from "../data/portfolioData"
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,8 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = ["Home", "About", "Skills", "Projects", "Contact"]
-
   const hireMeMailto = `mailto:${personalInfo.emails.primary}?subject=Hiring Inquiry – Portfolio&body=Hello ${personalInfo.name},%0D%0A%0D%0AI came across your portfolio and would like to discuss an opportunity with you.%0D%0A%0D%0ALooking forward to hearing from you.%0D%0ABest Regards,`
 
   return (
@@ -30,20 +28,20 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Left: Brand logo */}
-        <a href="#" className="text-white text-2xl font-black tracking-tight">
+        <a href="#home" className="text-white text-2xl font-black tracking-tight group">
           {personalInfo.brandName}
           <span className="text-[#ff2a2a] group-hover:text-white transition-colors">.</span>
         </a>
 
         {/* Centre: Desktop Links */}
         <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
+          {navLinks.map((item) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={item.href}
+              href={item.href}
               className="relative group text-white/80 hover:text-white font-medium transition-colors"
             >
-              {link}
+              {item.label}
               {/* Animated underline */}
               <span className="absolute -bottom-1 left-0 h-0.5 bg-red-500 w-0 group-hover:w-full transition-all duration-300" />
             </a>
@@ -98,14 +96,14 @@ export default function Navbar() {
         }`}
       >
         <div className="px-6 py-6 flex flex-col space-y-4">
-          {navLinks.map((link) => (
+          {navLinks.map((item) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={item.href}
+              href={item.href}
               onClick={() => setIsOpen(false)}
               className="text-white font-bold text-lg border-b border-white/20 pb-2 hover:text-black transition-colors"
             >
-              {link}
+              {item.label}
             </a>
           ))}
 

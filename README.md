@@ -1,4 +1,4 @@
-# My Portfolio
+# Ediga Raghuveerendra — Portfolio
 
 A single-page React developer portfolio built with Vite, Tailwind CSS 4, Framer Motion, and AOS animations.
 
