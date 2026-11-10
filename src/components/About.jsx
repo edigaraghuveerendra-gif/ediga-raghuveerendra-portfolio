@@ -30,8 +30,8 @@ export default function About() {
 
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-12 lg:gap-16 items-start relative z-10">
 
-        {/* ── Left: Enlarged ID Badge on a Lanyard (Framer Motion Spring Drop with 3D Flip) ── */}
-        <div className="md:w-[420px] shrink-0 w-full flex flex-col items-center md:items-start pt-10">
+        {/* ── Left: ID Badge on a Lanyard (Framer Motion Spring Drop with 3D Flip) ── */}
+        <div className="md:w-[360px] lg:w-[380px] shrink-0 w-full flex flex-col items-center md:items-start pt-12">
           <motion.div
             initial={{ y: -300, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -40,20 +40,20 @@ export default function About() {
             className="relative flex flex-col items-center w-full"
           >
             {/* Black lanyard strap extending upwards */}
-            <div className="absolute -top-36 left-1/2 -translate-x-1/2 w-3.5 h-44 bg-black rounded-b-sm pointer-events-none shadow-md" />
+            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-3 h-40 bg-black rounded-b-sm pointer-events-none shadow-md" />
 
             {/* Metallic clip rectangle with highlight */}
-            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-10 h-5 bg-gradient-to-b from-gray-300 via-gray-400 to-gray-500 rounded-sm border border-gray-600 shadow-lg z-30 pointer-events-none" />
+            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-9 h-4.5 bg-gradient-to-b from-gray-300 via-gray-400 to-gray-500 rounded-sm border border-gray-600 shadow-md z-30 pointer-events-none" />
 
             {/* Interactive Flip Card Button */}
             <button
               type="button"
               aria-label="Flip ID card"
               onClick={() => setFlipped((prev) => !prev)}
-              className="relative w-full max-w-[340px] sm:max-w-[360px] -rotate-3 hover:rotate-0 transition-transform duration-500 [perspective:1200px] focus:outline-none cursor-pointer"
+              className="relative w-full max-w-[295px] sm:max-w-[310px] -rotate-3 hover:rotate-0 transition-transform duration-500 [perspective:1200px] focus:outline-none cursor-pointer"
             >
               <div
-                className="relative w-full aspect-[3/4.6] transition-transform duration-700 [transform-style:preserve-3d]"
+                className="relative w-full aspect-[3/4.3] transition-transform duration-700 [transform-style:preserve-3d]"
                 style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
               >
                 {/* ── FRONT FACE: Premium Developer ID Badge ── */}
@@ -123,7 +123,7 @@ export default function About() {
                       <div className="bg-white p-3 rounded-2xl shadow-[0_0_25px_rgba(255,42,42,0.18)] border-2 border-white">
                         <QRCode
                           value={socialLinks.linkedin || ("mailto:" + personalInfo.emails.primary)}
-                          size={112}
+                          size={102}
                         />
                       </div>
                       <p className="text-[10px] font-mono uppercase tracking-widest text-white/50 mt-2 flex items-center gap-1.5">
