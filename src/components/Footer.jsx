@@ -1,5 +1,5 @@
 // src/components/Footer.jsx — minimal brutalist footer with large brand headline, taglines, credentials, and social links
-import { personalInfo, socialLinks, footerContent, academy } from "../data/portfolioData"
+import { personalInfo, socialLinks, footerContent } from "../data/portfolioData"
 
 // Constant evaluated once at module load to maintain purity
 const CURRENT_YEAR = new Date().getFullYear()
@@ -38,15 +38,15 @@ export default function Footer() {
       </div>
 
       {/* ── Middle: Huge Centred Brand Name ── */}
-      <div className="py-20 md:py-24 overflow-hidden text-center w-full flex justify-center items-center">
-        <h2 className="text-[18vw] md:text-[16vw] leading-none font-sans font-bold tracking-tighter lowercase select-none text-[#f4f4f4] whitespace-nowrap">
+      <div className="py-20 md:py-24 overflow-hidden text-center w-full flex justify-center items-center px-4">
+        <h2 className="text-[clamp(1.5rem,6.8vw,7rem)] leading-none font-sans font-bold tracking-tighter lowercase select-none text-[#f4f4f4] whitespace-nowrap">
           {personalInfo.brandName.toLowerCase()}
         </h2>
       </div>
 
       {/* ── Bottom Row ── */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-        {/* Column 1: Contact link, Copyright & TAP Academy Credit */}
+        {/* Column 1: Contact link & Copyright */}
         <div className="flex flex-col space-y-2">
           <a
             href="#contact"
@@ -56,17 +56,6 @@ export default function Footer() {
           </a>
           <p className="text-white/60 text-[9px] md:text-[10px]">
             {footerContent.copyright}
-          </p>
-          <p className="text-white/60 text-[9px] md:text-[10px]">
-            Trained at{" "}
-            <a
-              href={academy.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-white hover:text-[#ff2a2a] transition-colors"
-            >
-              {academy.name}
-            </a>
           </p>
         </div>
 

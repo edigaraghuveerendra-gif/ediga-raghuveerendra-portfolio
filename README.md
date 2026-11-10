@@ -4,7 +4,7 @@ A high-performance, responsive developer portfolio showcasing full-stack Java, R
 
 **Live site:** https://YOUR-SITE-URL/
 
-Built during the placement training program at [TAP Academy](https://thetapacademy.com/) (full-stack development, AI and augmented reality training).
+An aspiring Java Full Stack Developer with a strong foundation in Java, SQL, and modern frontend technologies, dedicated to building practical, database-driven web applications.
 
 ## Tech Stack
 

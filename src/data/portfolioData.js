@@ -1,11 +1,5 @@
 // portfolioData.js — single source of truth for ALL portfolio content
 
-// TAP Academy credit (used in Footer)
-export const academy = {
-  name: "TAP Academy",
-  url: "https://thetapacademy.com/",
-}
-
 // Personal info
 export const personal = {
   name: "Ediga Raghuveerendra",
@@ -59,8 +53,8 @@ export const footerContent = {
 export const hero = {
   greeting:    "Hello, I'm",
   name:        "Ediga Raghuveerendra",
-  titles:      ["Full-Stack Developer", "React Developer", "UI/UX Enthusiast", "AR Explorer"],
-  description: "I build fast, beautiful web experiences using React, Node.js and modern tooling. Trained at TAP Academy in full-stack development, AI and augmented reality.",
+  titles:      ["Java Full Stack Developer", "Backend Developer", "React Developer", "Aspiring Software Engineer"],
+  description: "I build fast, robust, and scalable web applications using Java, Spring Boot, React, and MySQL. Passionate about clean code, practical problem-solving, and continuous learning.",
   cta: {
     primary:   { label: "View My Work",  href: "#projects" },
     secondary: { label: "Contact Me",    href: "#contact"  },
@@ -271,9 +265,9 @@ export const about = {
   heading:  "About Me",
   tagline:  "Passionate developer. Lifelong learner.",
   bio: [
-    "I'm Ediga Raghuveerendra, a full-stack developer trained at TAP Academy in Hyderabad. I specialise in building clean, performant web applications using React on the front-end and Node.js on the back-end.",
-    "My training covered full-stack web development, artificial intelligence and augmented reality — giving me a unique blend of skills that bridges creative design and cutting-edge technology.",
-    "When I'm not coding, I'm exploring new frameworks, contributing to open-source, and levelling up my AR skills.",
+    "I'm Ediga Raghuveerendra, an aspiring Java Full Stack Developer based in Bengaluru. I specialize in building clean, performant, and database-driven web applications using Java and modern frontends.",
+    "My focus covers core Java, relational databases, Spring Boot, and responsive UI development — giving me a solid foundation in building end-to-end software solutions.",
+    "When I'm not coding, I'm exploring new backend architectures, practicing algorithms, and continuously improving my technical skills.",
   ],
   stats: [
     { value: "10+",  label: "Projects Built"    },
@@ -282,13 +276,13 @@ export const about = {
     { value: "100%", label: "Passion"           },
   ],
   // Highlighted tech tags shown under the bio
-  techTags: ["React", "JavaScript", "Node.js", "Tailwind CSS", "MongoDB", "Git", "Augmented Reality", "AI/ML"],
-  resumeUrl: "#", // replace with your actual CV link
+  techTags: ["Java", "Spring Boot", "MySQL", "JavaScript", "React", "HTML5", "CSS3", "Git"],
+  resumeUrl: "/Ediga_Raghuveerendra.pdf",
 }
 
 export const aboutContent = {
   heading: "About Me",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Ediga Raghuveerendra</span>, a Java Full Stack Developer based in Bengaluru. I am a B.Tech Data Science graduate from RGMCET with hands-on experience building database-driven web applications using Java, JDBC, Servlets, and MySQL, while sharpening my skills through the placement training program at TAP Academy. I continuously strengthen my programming abilities through Data Structures and Algorithms practice and enjoy building scalable, robust software.`,
+  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Ediga Raghuveerendra</span>, a Java Full Stack Developer based in Bengaluru. I am a B.Tech Data Science graduate from RGMCET with hands-on experience building database-driven web applications using Java, JDBC, Servlets, and MySQL. I enjoy developing practical web applications, solving programming problems, and continuously improving my technical skills.`,
   techStack: ["Java", "Spring Boot", "MySQL", "JavaScript", "React"],
 }
 

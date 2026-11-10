@@ -2,7 +2,7 @@
 import { useRef, useEffect, useState } from "react"
 import AOS from "aos"
 import "aos/dist/aos.css"
-import heroVideo from "../assets/hero/hero.mp4"
+import heroVideo from "../assets/hero/hero-new.mp4"
 import heroPoster from "../assets/about/profile.png"
 import { heroContent, socialLinks } from "../data/portfolioData"
 
