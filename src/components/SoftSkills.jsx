@@ -32,14 +32,28 @@ export default function SoftSkills() {
   }
 
   return (
+    /*
+      overflow-hidden is intentionally removed so the wave divider
+      can extend upward (via -translate-y-full) into the dark section above.
+      The subtle grid background pattern doesn't need clipping.
+    */
     <section
       id="soft-skills"
-      className="bg-white pt-28 pb-32 px-6 md:px-12 relative overflow-hidden bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]"
+      className="bg-white pt-24 pb-32 px-6 md:px-12 relative bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]"
     >
-      {/* ── Curved Top Wave (dark Leadership → white SoftSkills) ── */}
-      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
-        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="relative block w-full h-10 md:h-14 fill-white">
-          <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" />
+      {/*
+        ── Curved Top Divider ──
+        Positioned at top-0 then pushed fully ABOVE the section with -translate-y-full.
+        fill-white carves a smooth wave into the dark Leadership section above,
+        so the two sections blend with a natural curved boundary.
+      */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none -translate-y-full">
+        <svg
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          className="relative block w-full h-12 md:h-20 fill-white"
+        >
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z" />
         </svg>
       </div>
 
