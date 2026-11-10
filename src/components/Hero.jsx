@@ -209,33 +209,33 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right Block: Play Reel Control — anchored to bottom-right to cover watermark ── */}
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="600"
-          className="flex flex-col items-center justify-center cursor-pointer group absolute bottom-[12%] right-[6%] md:bottom-[14%] md:right-[7%] lg:bottom-[16%] lg:right-[8%]"
-          onClick={toggleVideo}
-        >
-          <button
-            type="button"
-            aria-label={isPlaying ? "Pause video" : "Play video"}
-            className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md hover:scale-110 hover:bg-[#ff2a2a] hover:shadow-[0_0_30px_#ff2a2a] transition-all duration-300 flex items-center justify-center cursor-pointer"
-          >
-            {isPlaying ? (
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
-              </svg>
-            ) : (
-              <svg className="w-5 h-5 md:w-8 md:h-8 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            )}
-          </button>
-          <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white mt-2 select-none group-hover:text-black transition-colors">
-            {isPlaying ? "Pause" : "Play Reel"}
-          </span>
-        </div>
+      </div>
 
+      {/* ── Play Reel Control — positioned directly over the watermark (bottom-right corner) ── */}
+      <div
+        data-aos="zoom-in"
+        data-aos-delay="600"
+        className="absolute bottom-[6%] right-[6%] sm:bottom-[7%] sm:right-[6%] md:bottom-[8%] md:right-[7%] z-20 flex flex-col items-center justify-center cursor-pointer group"
+        onClick={toggleVideo}
+      >
+        <button
+          type="button"
+          aria-label={isPlaying ? "Pause video" : "Play video"}
+          className="w-12 h-12 md:w-20 md:h-20 rounded-full border border-white/30 bg-black/20 backdrop-blur-md hover:scale-110 hover:bg-[#ff2a2a] hover:shadow-[0_0_30px_#ff2a2a] transition-all duration-300 flex items-center justify-center cursor-pointer"
+        >
+          {isPlaying ? (
+            <svg className="w-5 h-5 md:w-8 md:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" />
+            </svg>
+          ) : (
+            <svg className="w-5 h-5 md:w-8 md:h-8 text-white translate-x-0.5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          )}
+        </button>
+        <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white mt-2 select-none group-hover:text-black transition-colors">
+          {isPlaying ? "Pause" : "Play Reel"}
+        </span>
       </div>
 
       {/* ── Bottom-Centre Bouncing Down-Arrow Scroll Indicator ── */}
