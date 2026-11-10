@@ -239,7 +239,7 @@ export default function Hero() {
       </div>
 
       {/* ── Bottom-Centre Bouncing Down-Arrow Scroll Indicator ── */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 hidden md:block animate-bounce pointer-events-none text-white">
+      <div className="absolute bottom-10 md:bottom-14 left-1/2 -translate-x-1/2 z-20 hidden md:block animate-bounce pointer-events-none text-white">
         <svg
           className="w-6 h-6"
           fill="none"
@@ -250,6 +250,7 @@ export default function Hero() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
+
     </section>
   )
 }

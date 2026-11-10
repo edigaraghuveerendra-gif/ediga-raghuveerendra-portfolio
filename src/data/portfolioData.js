@@ -282,7 +282,7 @@ export const about = {
 
 export const aboutContent = {
   heading: "About Me",
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Ediga Raghuveerendra</span>, a Java Full Stack Developer based in India. I am a B.Tech Data Science graduate from RGMCET with hands-on experience building database-driven web applications using Java, JDBC, Servlets, and MySQL. I enjoy developing practical web applications, solving programming problems, and continuously improving my technical skills.`,
+  bio: `Hi, I'm <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">EDIGA RAGHUVEERENDRA</span>, a Java Full Stack Developer with a strong foundation in Java, Spring Boot, SQL, and web technologies. I am a B.Tech graduate in Data Science from RGMCET, passionate about building scalable, user-friendly, and database-driven applications. I enjoy turning ideas into practical solutions, solving challenging programming problems, and continuously strengthening my development skills.`,
   techStack: ["Java", "Spring Boot", "MySQL", "JavaScript", "React"],
 }
 
