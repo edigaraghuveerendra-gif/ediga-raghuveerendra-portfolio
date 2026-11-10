@@ -5,10 +5,10 @@ export function LeadershipItem({ item, index }) {
   const isEven = index % 2 === 0
 
   return (
-    <div className="relative flex flex-col md:flex-row items-center w-full mb-12 last:mb-0">
+    <div className="relative flex flex-col md:flex-row items-center justify-between w-full mb-12 last:mb-0">
 
-      {/* ── LEFT SIDE (on md+) ── */}
-      <div className={`w-full md:w-[45%] pl-12 md:pl-0 ${isEven ? "md:text-right" : "md:order-3 md:text-left"}`}>
+      {/* ── CARD (Left on even, Right on odd on md+) ── */}
+      <div className={`w-full md:w-[45%] pl-12 md:pl-0 ${isEven ? "md:order-1 md:text-right" : "md:order-3 md:text-left"}`}>
         <div
           data-aos={isEven ? "fade-right" : "fade-left"}
           className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 hover:border-red-500/30 transition-all duration-300 group"
@@ -38,7 +38,7 @@ export function LeadershipItem({ item, index }) {
       </div>
 
       {/* ── CENTRE / TIMELINE DOT ── */}
-      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20">
+      <div className="absolute left-4 md:left-1/2 -translate-x-1/2 flex items-center justify-center z-20 pointer-events-none">
         <div className="w-4 h-4 rounded-full bg-[#ff2a2a] ring-4 ring-black shadow-[0_0_15px_#ff2a2a]" />
       </div>
 
