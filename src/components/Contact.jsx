@@ -79,7 +79,7 @@ export default function Contact() {
     <section
       ref={ref}
       id="contact"
-      className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32"
+      className="bg-[#0a0a0a] w-full min-h-screen relative overflow-hidden flex items-end pt-32 border-t border-gray-900"
     >
       {/* Parallax Giant Background Text */}
       <motion.div
@@ -299,13 +299,6 @@ export default function Contact() {
             </div>
           </form>
         </div>
-      </div>
-
-      {/* ── Curved Bottom Wave Divider → into Footer (#111111 bg) ── */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none translate-y-[1px]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-12 md:h-20 fill-[#111111]">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.62,189.5,99.8,242.79,81.82,282.88,63.6,321.39,56.44Z" />
-        </svg>
       </div>
     </section>
   )
