@@ -34,8 +34,15 @@ export default function SoftSkills() {
   return (
     <section
       id="soft-skills"
-      className="bg-white pt-24 pb-32 px-6 md:px-12 relative overflow-hidden bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]"
+      className="bg-white pt-28 pb-32 px-6 md:px-12 relative overflow-hidden bg-[linear-gradient(to_right,#80808006_1px,transparent_1px),linear-gradient(to_bottom,#80808006_1px,transparent_1px)] bg-[size:60px_60px]"
     >
+      {/* ── Curved Top Wave (dark Leadership → white SoftSkills) ── */}
+      <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
+        <svg viewBox="0 0 1200 80" preserveAspectRatio="none" className="relative block w-full h-10 md:h-14 fill-white">
+          <path d="M0,40 C150,80 350,0 600,40 C850,80 1050,0 1200,40 L1200,80 L0,80 Z" />
+        </svg>
+      </div>
+
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* ── Header ── */}

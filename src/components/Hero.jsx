@@ -209,11 +209,11 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Right Block: Play Reel Control ── */}
+        {/* ── Right Block: Play Reel Control — anchored to bottom-right to cover watermark ── */}
         <div
           data-aos="zoom-in"
           data-aos-delay="600"
-          className="flex flex-col items-center justify-center mt-8 md:mt-0 cursor-pointer group"
+          className="flex flex-col items-center justify-center cursor-pointer group absolute bottom-[12%] right-[6%] md:bottom-[14%] md:right-[7%] lg:bottom-[16%] lg:right-[8%]"
           onClick={toggleVideo}
         >
           <button
