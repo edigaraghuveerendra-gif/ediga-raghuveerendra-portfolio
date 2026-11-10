@@ -215,7 +215,7 @@ export default function Hero() {
       <div
         data-aos="zoom-in"
         data-aos-delay="600"
-        className="absolute bottom-[6%] right-[6%] sm:bottom-[7%] sm:right-[6%] md:bottom-[8%] md:right-[7%] z-20 flex flex-col items-center justify-center cursor-pointer group"
+        className="absolute bottom-[6%] right-[2%] sm:bottom-[7%] sm:right-[2%] md:bottom-[8%] md:right-[3%] z-20 flex flex-col items-center justify-center cursor-pointer group"
         onClick={toggleVideo}
       >
         <button
